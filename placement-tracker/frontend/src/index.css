@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+/* ----------------------------------------------------------------------
+   Design tokens for Placement Tracker
+   Palette: deep slate background, indigo->teal accent gradient representing
+   "progress toward placement". Inter for UI text, JetBrains Mono for
+   data points (dates, counts, status codes) to give the app a slight
+   "tracking sheet" feel without going full spreadsheet.
+---------------------------------------------------------------------- */
+@theme {
+  --color-base-950: #0a0e14;
+  --color-base-900: #11161f;
+  --color-base-800: #1a212d;
+  --color-base-700: #252e3d;
+  --color-base-600: #374256;
+  --color-base-400: #8b96a8;
+  --color-base-200: #d7dce4;
+
+  --color-accent-500: #6366f1;
+  --color-accent-400: #818cf8;
+  --color-accent-300: #a5b4fc;
+
+  --color-teal-500: #14b8a6;
+  --color-teal-400: #2dd4bf;
+
+  --color-rose-500: #f43f5e;
+  --color-amber-500: #f59e0b;
+
+  --font-display: "Inter", "system-ui", sans-serif;
+  --font-mono-data: "JetBrains Mono", "ui-monospace", monospace;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-display);
+  }
+
+  body {
+    background-color: var(--color-base-950);
+    color: var(--color-base-200);
+  }
+
+  /* Visible keyboard focus ring everywhere, for accessibility */
+  :focus-visible {
+    outline: 2px solid var(--color-accent-400);
+    outline-offset: 2px;
+  }
+}
+
+/* Subtle custom scrollbar to match the dark theme */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-base-900);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-base-700);
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-base-600);
+}
